@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 // import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 
@@ -57,16 +58,98 @@ class _HomePageState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      child: new Stack(
-        children: <Widget>[
-          Center(
-            child: Container(
-              color: CupertinoColors.darkBackgroundGray,
-              width: MediaQuery.of(context).size.width / 2,
-              height: MediaQuery.of(context).size.height / 2,
-            ),
-          ),
-        ],
+      backgroundColor: Colors.yellow,
+      child: new SafeArea(
+        child: new Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Positioned.fill(
+              child: Align(
+                alignment: Alignment.center,
+                child: new Column(
+                  // alignment: Alignment.bottomCenter,
+                  children: <Widget>[
+                    new Container(
+                      // margin: new EdgeInsets.all(20.0),
+                      padding: new EdgeInsets.all(20),
+                      // color: CupertinoColors.systemTeal,
+                      width: MediaQuery.of(context).size.width / 100 * 90,
+                      height: MediaQuery.of(context).size.height /
+                          100 *
+                          30, // 30 precent of the screen
+                      child: new Column(
+                        children: [
+                          new Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "00.00",
+                              // style: DefaultTextStyle.of(context)
+                              //     .style
+                              //     .apply(fontSizeFactor: 2.0),
+                              style: TextStyle(
+                                fontFamily: '24 display',
+                                fontSize: 50,
+                              ),
+                            ),
+                            width: MediaQuery.of(context).size.width /
+                                100 *
+                                90 / // this is the width of the parent
+                                100 *
+                                50,
+                            height: MediaQuery.of(context).size.height /
+                                100 *
+                                30 /
+                                100 *
+                                30,
+                            decoration: BoxDecoration(
+                              color: Colors.green[700],
+                              borderRadius:
+                                  new BorderRadius.all(Radius.circular(3)),
+                              border: Border.all(
+                                width: 5,
+                                color: Colors.black,
+                                style: BorderStyle.solid,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[800],
+                        borderRadius: new BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(30),
+                          bottomLeft: Radius.circular(30),
+                        ),
+                        border: Border.all(
+                          width: 5,
+                          color: Colors.black,
+                          style: BorderStyle.solid,
+                        ),
+                      ),
+                    ),
+                    new Container(
+                      alignment: Alignment.center,
+                      margin: new EdgeInsets.only(top: 80),
+                      // color: CupertinoColors.systemTeal,
+                      width: MediaQuery.of(context).size.width / 100 * 90,
+                      height: MediaQuery.of(context).size.height /
+                          100 *
+                          30, // 30 precent of the screen
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/talk-image-off.png"),
+                        ),
+                      ),
+                    ), // ptt button
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
