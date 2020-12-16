@@ -113,6 +113,54 @@ class _HomePageState extends State<HomeScreen> {
                               ),
                             ),
                           ),
+                          new IntrinsicHeight(
+                              child: new Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: new Container(
+                                  child: Text("Lock"),
+                                  decoration: BoxDecoration(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: new Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Expanded(
+                                      child: new Container(
+                                        child: Text("Up"),
+                                        decoration: BoxDecoration(
+                                          color: Colors.green,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: new Container(
+                                        child: Text("Down"),
+                                        decoration: BoxDecoration(
+                                          color: Colors.green,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: new Container(
+                                  child: Text("Power"),
+                                  decoration: BoxDecoration(
+                                    color: Colors.purple,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
                         ],
                       ),
                       decoration: BoxDecoration(
